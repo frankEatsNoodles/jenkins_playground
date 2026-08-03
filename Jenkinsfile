@@ -1,7 +1,24 @@
 pipeline {
     agent any
 
+    tools {
+        jdk 'jdk21'
+        maven 'maven3'
+    }
+
     stages {
+        stage('Java Version') {
+            steps {
+                sh 'java -version'
+            }
+        }
+
+        stage('Maven Version') {
+            steps {
+                sh 'mvn -version'
+            }
+        }
+
         stage('Build') {
             steps {
                 echo 'Running build...'
