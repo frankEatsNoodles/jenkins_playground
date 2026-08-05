@@ -24,6 +24,14 @@ pipeline {
                 echo 'Running build...'
             }
         }
+        stage('Check Docker') {
+            steps {
+                sh '''
+                docker version
+                docker ps
+                '''
+            }
+        }
     }
 
     post {
