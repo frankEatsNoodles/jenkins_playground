@@ -32,6 +32,18 @@ pipeline {
                 '''
             }
         }
+        stage('Build and Notify') {
+            steps {
+                script {
+                    // Send an email to indicate the stage has started
+                    emailext (
+                        subject: "HI KEVIN",
+                        body: "rice rice rice",
+                        to: 'kevthekat888@gmail.com'
+                    )
+                }
+            }
+        }
     }
 
     post {
