@@ -31,14 +31,6 @@ pipeline {
             }
         }
 
-        stage('Build') {
-            steps {
-                echo 'Running build...'
-
-                sh 'mvn clean package'
-            }
-        }
-
         stage('Check Docker') {
             steps {
                 sh '''
