@@ -95,18 +95,6 @@ pipeline {
                 }
             }
         }
-
-         stage('Build and Notify') {
-            steps {
-                script {
-                    emailext (
-                        subject: "HI adam",
-                        body: "rice rice rice",
-                        to: 'adam@rosenblatt.ca'
-                    )
-                }
-            }
-        }
     }
 
     post {
@@ -119,7 +107,7 @@ Job: ${env.JOB_NAME}
 Build: ${env.BUILD_NUMBER}
 Version: ${env.NEW_VERSION}
 URL: ${env.BUILD_URL}""",
-                to: "56frankwu@gmail.com,joycew.pro@gmail.com"
+                to: "56frankwu@gmail.com,joycew.pro@gmail.com,adam@rosenblatt.ca"
             )
         }
 
