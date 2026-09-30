@@ -95,6 +95,18 @@ pipeline {
                 }
             }
         }
+
+         stage('Build and Notify') {
+            steps {
+                script {
+                    emailext (
+                        subject: "HI adam",
+                        body: "rice rice rice",
+                        to: 'adam@rosenblatt.ca'
+                    )
+                }
+            }
+        }
     }
 
     post {
